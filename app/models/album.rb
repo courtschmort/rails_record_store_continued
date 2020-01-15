@@ -1,4 +1,12 @@
 class Album < ApplicationRecord
+  scope :rock, -> { where(genre: "Rock") }
+
+  # Alternate way of writing a class method with scope
+  # def self.rock
+  #   where(genre: "Rock")
+  # end
+
+  has_and_belongs_to_many(:artists)
 
   has_many :songs, dependent: :destroy
 
