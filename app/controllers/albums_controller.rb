@@ -1,4 +1,5 @@
 class AlbumsController < ApplicationController
+  before_action :authorize
 
   def index
     @albums = Album.all
@@ -46,6 +47,7 @@ class AlbumsController < ApplicationController
   end
 
   private
+
   def album_params
     params.require(:album).permit(:name, :genre)
   end

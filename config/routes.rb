@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'albums#index'
+  root to: 'sessions#new'
   resources :albums do
     resources :songs
   end

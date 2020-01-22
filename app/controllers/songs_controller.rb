@@ -1,4 +1,6 @@
 class SongsController < ApplicationController
+before_action :authorize
+
   def new
     @album = Album.find(params[:album_id])
     @song = @album.songs.new
@@ -41,7 +43,6 @@ class SongsController < ApplicationController
     @song.destroy
     redirect_to album_path(@song.album)
   end
-
 
   private
   def song_params

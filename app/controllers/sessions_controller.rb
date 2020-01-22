@@ -1,14 +1,14 @@
 class SessionsController < ApplicationController
   def create
-    @user = User.authenticate(params[:email], params[:password])
+    @user = User.authenticate(params[:input], params[:password])
     if @user
       flash[:notice] = "You've signed in."
       session[:user_id] = @user.id
-      redirect_to "/"
+      redirect_to "/albums"
     else
       flash[:alert] = "There was a problem signing in. Please try again."
       redirect_to signin_path
-    end 
+    end
   end
 
   def destroy
