@@ -58,6 +58,9 @@ end
 
 group :test do
   gem 'shoulda-matchers'
+  gem 'capybara'
+  # gem 'factory_bot_rails'
+  gem 'simplecov', require: false
 end
 
 gem 'bootstrap-sass', '~> 3.4.1'
